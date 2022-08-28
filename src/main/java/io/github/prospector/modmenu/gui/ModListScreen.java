@@ -89,7 +89,7 @@ public class ModListScreen extends Screen {
 		ButtonWidget configureButton = new ModMenuTexturedButtonWidget(12341, width - 24, paneY, 20, 20, 0, 0, CONFIGURE_BUTTON_LOCATION, 32, 64,
 				I18n.translate("modmenu.configure")) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 				if (hovered) {
 					setTooltip(I18n.translate("modmenu.configure"));
 				}
@@ -101,7 +101,7 @@ public class ModListScreen extends Screen {
 				}
 				visible = active;
 				GlStateManager.color4f(1, 1, 1, 1);
-				super.render(client, mouseX, mouseY);
+				super.renderBg(client, mouseX, mouseY);
 			}
 		};
 		int urlButtonWidths = paneWidth / 2 - 2;
@@ -109,25 +109,25 @@ public class ModListScreen extends Screen {
 		ButtonWidget websiteButton = new ButtonWidget(190, rightPaneX + (urlButtonWidths / 2) - (cappedButtonWidth / 2), paneY + 36, Math.min(urlButtonWidths, 200), 20,
 				I18n.translate("modmenu.website")) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 				visible = selected != null;
 				active = visible && selected.getMetadata().getContact().get("homepage").isPresent();
-				super.render(client, mouseX, mouseY);
+				super.renderBg(client, mouseX, mouseY);
 			}
 		};
 		ButtonWidget issuesButton = new ButtonWidget(191, rightPaneX + urlButtonWidths + 4 + (urlButtonWidths / 2) - (cappedButtonWidth / 2), paneY + 36, Math.min(urlButtonWidths, 200), 20,
 				I18n.translate("modmenu.issues")) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 				visible = selected != null;
 				active = visible && selected.getMetadata().getContact().get("issues").isPresent();
-				super.render(client, mouseX, mouseY);
+				super.renderBg(client, mouseX, mouseY);
 			}
 		};
 		this.buttons.add(new ModMenuTexturedButtonWidget(180, paneWidth / 2 + searchBoxWidth / 2 - 20 / 2 + 2, 22, 20, 20, 0, 0, FILTERS_BUTTON_LOCATION, 32, 64) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
-				super.render(client, mouseX, mouseY);
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
+				super.renderBg(client, mouseX, mouseY);
 				if (isHovered()) {
 					setTooltip(I18n.translate("modmenu.toggleFilterOptions"));
 				}
@@ -148,18 +148,18 @@ public class ModListScreen extends Screen {
 		}
 		this.buttons.add(new ButtonWidget(181, filtersX, 45, sortingWidth, 20, sortingText) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 				visible = filterOptionsShown;
 				message = (I18n.translate("modmenu.sorting", I18n.translate(ModMenuConfigManager.getConfig().getSorting().getTranslationKey())));
-				super.render(client, mouseY, mouseY);
+				super.renderBg(client, mouseY, mouseY);
 			}
 		});
 		this.buttons.add(new ButtonWidget(182, filtersX + sortingWidth + 2, 45, showLibrariesWidth, 20, I18n.translate("modmenu.showLibraries", I18n.translate("modmenu.showLibraries." + ModMenuConfigManager.getConfig().showLibraries()))) {
 			@Override
-			public void render(MinecraftClient client, int mouseX, int mouseY) {
+			public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 				visible = filterOptionsShown;
 				message = (I18n.translate("modmenu.showLibraries", I18n.translate("modmenu.showLibraries." + ModMenuConfigManager.getConfig().showLibraries())));
-				super.render(client, mouseX, mouseY);
+				super.renderBg(client, mouseX, mouseY);
 			}
 		});
 		this.buttons.add(configureButton);

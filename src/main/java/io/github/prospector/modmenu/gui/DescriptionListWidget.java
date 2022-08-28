@@ -75,7 +75,7 @@ public class DescriptionListWidget extends EntryListWidget {
 		}
 
 		@Override
-		public void render(int index, int x, int y, int rowWidth, int rowHeight, int mouseX, int mouseY, boolean hovered) {
+		public void method_6700(int i, int x, int y, int l, int m, int n, int o, boolean bl, float f) {
 			MinecraftClient.getInstance().textRenderer.drawWithShadow(text, x, y, 0xAAAAAA);
 		}
 
@@ -90,7 +90,7 @@ public class DescriptionListWidget extends EntryListWidget {
 		}
 
 		@Override
-		public void updatePosition(int index, int x, int y) {
+		public void method_9473(int i, int j, int k, float f) {
 			// NO-OP
 		}
 	}

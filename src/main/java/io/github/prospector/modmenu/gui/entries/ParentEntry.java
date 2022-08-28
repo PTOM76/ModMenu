@@ -29,8 +29,8 @@ public class ParentEntry extends ModListEntry {
 	}
 
 	@Override
-	public void render(int index, int y, int x, int rowWidth, int rowHeight, int mouseX, int mouseY, boolean hovered) {
-		super.render(index, y, x, rowWidth, rowHeight, mouseX, mouseY, hovered);
+	public void method_6700(int index, int y, int x, int rowWidth, int rowHeight, int mouseX, int mouseY, boolean hovered, float f) {
+		super.method_6700(index, y, x, rowWidth, rowHeight, mouseX, mouseY, hovered, f);
 		TextRenderer font = client.textRenderer;
 		int childrenBadgeHeight = font.fontHeight;
 		int childrenBadgeWidth = font.fontHeight;

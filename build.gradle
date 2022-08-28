@@ -109,11 +109,11 @@ task modrinth(type: com.modrinth.minotaur.TaskModrinthUpload) {
 	token = project.hasProperty('modrinth_token') ? project.getProperty('modrinth_token') : ""
 	projectId = "XzTYkVLx"
 	versionNumber = project.version
-	versionName = "[1.8.9] Legacy Mod Menu ${project.version}"
+	versionName = "[1.12.2] Legacy Mod Menu ${project.version}"
 	versionType = "RELEASE"
 
 	uploadFile = remapJar
 
-	addGameVersion('1.8.9')
+	addGameVersion('1.12.2')
 	addLoader('fabric')
 }

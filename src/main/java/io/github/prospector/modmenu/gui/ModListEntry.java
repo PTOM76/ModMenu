@@ -50,12 +50,12 @@ public class ModListEntry implements EntryListWidget.Entry {
 	}
 
 	@Override
-	public void updatePosition(int index, int x, int y) {
+	public void method_9473(int index, int x, int y, float f) {
 		// NO-OP
 	}
 
 	@Override
-	public void render(int index, int x, int y, int rowWidth, int rowHeight, int mouseX, int mouseY, boolean hovered) {
+	public void method_6700(int index, int x, int y, int rowWidth, int rowHeight, int mouseX, int mouseY, boolean hovered, float f) {
 		updateHovered(hovered);
 		x += getXOffset();
 		rowWidth -= getXOffset();
